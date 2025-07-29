@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Cadastro de Usuários</title>
+  <link rel="stylesheet" href="https://SEU_BUCKET_S3.s3.amazonaws.com/style.css">
+</head>
+<body>
+  <h1>Usuários Cadastrados</h1>
+
+  <form method="POST">
+    <label>Nome:</label><br>
+    <input type="text" name="name" required><br><br>
+
+    <label>Email:</label><br>
+    <input type="email" name="email" required><br><br>
+
+    <button type="submit">Cadastrar</button>
+  </form>
+
+  <h2>Lista de Usuários:</h2>
+  <ul>
+    {% for u in users %}
+      <li>{{ u[1] }} - {{ u[2] }}</li>
+    {% endfor %}
+  </ul>
+
+  <p><a href="/">Voltar à Página Inicial</a></p>
+</body>
+</html>
